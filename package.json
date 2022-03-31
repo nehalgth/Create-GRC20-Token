@@ -1,0 +1,47 @@
+{
+    "name": "openzeppelin-contracts",
+    "description": "Secure Smart Contract library for Solidity",
+    "version": "4.3.2",
+    "files": [
+        "/contracts/**/*.sol",
+        "/build/contracts/*.json",
+        "!/contracts/mocks/**/*"
+    ],
+    "scripts": {
+        "compile": "hardhat compile",
+        "coverage": "env COVERAGE=true hardhat coverage",
+        "clean": "hardhat clean && rimraf build contracts/build",
+        "test": "hardhat test",
+        "test:devnet": "hardhat test --network devnet",
+        "test:inheritance": "node scripts/inheritanceOrdering artifacts/build-info/*",
+        "gas-report": "env ENABLE_GAS_REPORT=true npm run test",
+        "deploy:devnet": "npx hardhat run scripts/deploy.js --network devnet",
+        "deploy:testnet": "npx hardhat run scripts/deploy.js --network testnet",
+        "deploy:mainnet": "npx hardhat run scripts/deploy.js --network mainnet",
+        "deploy": "npx hardhat run scripts/deploy.js"
+    },
+    "keywords": [
+        "solidity",
+        "ethereum",
+        "smart",
+        "contracts",
+        "security",
+        "zeppelin"
+    ],
+    "author": "",
+    "license": "MIT",
+    "devDependencies": {
+        "@nomiclabs/hardhat-ethers": "^2.0.2",
+        "@nomiclabs/hardhat-truffle5": "^2.0.0",
+        "@nomiclabs/hardhat-web3": "^2.0.0",
+        "@openzeppelin/test-helpers": "^0.5.13",
+        "chai": "^4.2.0",
+        "ethers": "^5.5.1",
+        "hardhat": "^2.6.8"
+    },
+    "dependencies": {
+        "@openzeppelin/contracts": "^4.3.3",
+        "big-number": "^2.0.0",
+        "node-gyp-build": "^4.3.0"
+    }
+}
