@@ -1,28 +1,70 @@
-Initial setup for openzeppelin-contracts:
-    Replace following values with your account values in secret.json file:
+# Create your first GRC20 Token
+
+### Initial setup for openzeppelin-contracts:
+
+​    Replace following values with your account values in secret.json file:
+
+```json
         "privateKey1": "0xdmdlk........",
         "privateKey2": "0x9fkk.........",
         "privateKey3": "0xrry.........."
-  
-Steps to run contracts in openzeppelin-contracts:
-    1. Install node dependencies: 
-        npm install
-        npm install -g npx
-    2. Compile smart contract:  
-        npm run compile
-    3. Test smart contract(in hardhat):  
-        npm run test
-    4. Test smart contract(in devnet):  
-        npm run test:devnet
-    5. Deploy smart contract(in hardhat):
-        npx hardhat run scripts/deploy.js
-    6. Deploy smart contract(in devnet):
-        npx hardhat run scripts/deploy.js --network devnet
+```
 
-devnet deployments:
-    Token deployed to: `0xB4C016ea4f0e64d91eaCB4449b55674d72CC9d60`
-    
-FUNCTIONS:
+
+
+### Steps to run contracts in openzeppelin-contracts:
+
+   1. **Install node dependencies:** 
+
+      ```bash
+      npm install
+      npm install -g npx
+      ```
+
+   2. **Compile smart contract:**  
+
+      ```bash
+      npm run compile
+      ```
+
+   3. **Compile smart contract:**  
+
+      ```bash
+      npm run compile
+      ```
+
+   4. **Test smart contract(in hardhat):**  
+
+      ```bash
+      npm run test
+      ```
+
+   5. **Test smart contract(in devnet):**  
+
+      ```
+      npm run test:devnet
+      ```
+
+   6. **Deploy smart contract(in hardhat):**
+
+      ```bash
+      npx hardhat run scripts/deploy.js
+      ```
+
+   7. **Deploy smart contract(in devnet):**
+
+      ```bash
+      npx hardhat run scripts/deploy.js --network devnet
+      ```
+
+      
+
+### Devnet deployments:
+
+​    **Token deployed to:** `0xB4C016ea4f0e64d91eaCB4449b55674d72CC9d60`
+​    
+
+### Functions:
 
 1.  `totalSupply()`  => Returns the amount of tokens in existence.
 
@@ -32,7 +74,7 @@ FUNCTIONS:
 
 4.  `decimals()` => Returns the number of decimals used to get its user representation. For example, if `decimals` equals `2`, a balance of `505` tokens should be displayed to a user as `5.05` (`505 / 10 ** 2`).
 
-5. ` balanceOf(address account)` => Returns the amount of tokens owned by `account`.
+5.  ` balanceOf(address account)` => Returns the amount of tokens owned by `account`.
 
 6.  `transfer(recipient, amount)` => Moves `amount` tokens from the caller's account to `recipient`. Returns a boolean value indicating whether the operation succeeded.
 
@@ -41,14 +83,14 @@ FUNCTIONS:
 8.  `approve(spender, amount)` =>  Sets `amount` as the allowance of `spender` over the caller's tokens.
 
 
-9.  `transferFrom(sender, recipient, amount)` => Moves amount tokens from sender to recipient using the allowance mechanism. amount is then deducted from the caller’s allowance. Returns a boolean value indicating whether the operation succeeded. Emits a Transfer event.
+9. `transferFrom(sender, recipient, amount)` => Moves amount tokens from sender to recipient using the allowance mechanism. amount is then deducted from the caller’s allowance. Returns a boolean value indicating whether the operation succeeded. Emits a Transfer event.
 
 10. `increaseAllowance(spender, addedValue)` => Atomically increases the allowance granted to spender by the caller. This is an alternative to approve that can be used as a mitigation for problems described in IERC20.approve. Emits an Approval event indicating the updated allowance. 
-Requirements: 
+    Requirements: 
     spender cannot be the zero address.
 
 11. `decreaseAllowance(spender, subtractedValue)` => Atomically decreases the allowance granted to spender by the caller.This is an alternative to approve that can be used as a mitigation for problems described in IERC20.approve. Emits an Approval event indicating the updated allowance. 
-Requirements: 
+    Requirements: 
     spender cannot be the zero address.
     spender must have allowance for the caller of at least subtractedValue.
 
@@ -62,4 +104,6 @@ Requirements:
 
 16. `mint(amount)` => mint request number of tokens for owner's account.
 
-For future: mint for some other account by owner.
+    
+
+> For future: mint for some other account by owner.
